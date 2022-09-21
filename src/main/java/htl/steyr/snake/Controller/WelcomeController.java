@@ -22,16 +22,17 @@ public class WelcomeController {
         // das Spiel und die Steuerung kurz erklären auf Englisch
     }
 
-    public void clicksettingsbtn(ActionEvent actionEvent){
+    public void clicksettingsbtn(ActionEvent actionEvent) throws IOException {
         // Weiterleiten auf Settings.fxml dann wieder zurück auf hello-view.fxml
         // dann playbtn
         // gleich wie clickplaybtn Funktion
+        changeSceneSettings();
     }
 
     public void clickplaybtn(ActionEvent actionEvent) throws IOException {
-        changeScene();
+        changeScenePlayfield();
     }
-    public void changeScene() throws IOException{
+    public void changeScenePlayfield() throws IOException{
         Stage stage = new Stage();
 
         Stage stageclose = (Stage) playbtn.getScene().getWindow();
@@ -51,9 +52,28 @@ public class WelcomeController {
         stage.setResizable(false);
         stage.show();
 
-
-
     }
 
+
+    public void changeSceneSettings() throws IOException{
+        Stage stage = new Stage();
+
+        Stage stageclose = (Stage) settingsbtn.getScene().getWindow();
+        stageclose.close();
+
+        final FXMLLoader fxmlLoader = new FXMLLoader();
+        URL u = HelloApplication.class.getResource("Settings.fxml");
+
+        assert u != null;
+        Scene scene = new Scene(fxmlLoader.load(u.openStream()));
+        SettingsController sc =fxmlLoader.getController();
+
+        stage.setTitle("Snake");
+        scene.setFill(Color.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
     }
 
