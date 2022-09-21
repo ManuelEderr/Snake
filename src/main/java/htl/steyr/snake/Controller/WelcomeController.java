@@ -1,5 +1,6 @@
 package htl.steyr.snake.Controller;
 
+import htl.steyr.snake.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -34,10 +35,11 @@ public class WelcomeController {
         stageclose.close();
 
         final FXMLLoader fxmlLoader = new FXMLLoader();
-        URL u = PlayfieldController.class.getResource("Playfield.fxml");
+        URL u = HelloApplication.class.getResource("Playfield.fxml");
 
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
+        PlayfieldController pc =fxmlLoader.getController();
 
         stage.setTitle("Snake ");
         scene.setFill(Color.TRANSPARENT);

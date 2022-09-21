@@ -23,4 +23,15 @@ public class Playfield {
         }
     }
 
+    public void drawRandomApple(){
+        for (int j = 0; j < field.length; j++){
+            for (int i = 0; i < field[j].length; i++){
+                if (field[j][i] == EMPTY){
+                    field[i][j] = FOOD;
+                    break;
+                }
+            }
+        }
+    }
+
 }
