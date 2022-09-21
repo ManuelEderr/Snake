@@ -14,7 +14,9 @@ public class PlayfieldController {
 
     PlayfieldView pfView = new PlayfieldView(snakePlayfield, boardView);
 
-
-
+    public void afterSwitch(){
+        snakePlayfield.drawRandomApple();
+        pfView.drawPlayfield();
+    }
 
 }

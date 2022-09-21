@@ -1,12 +1,14 @@
 package htl.steyr.snake.Model;
 
+import java.util.Random;
+
 public class Playfield {
     public static int MAX_X = 20;
     public static int MAX_Y = 20;
 
     public static int EMPTY = 0;
-    public static int SNAKE = 1;
-    public static int FOOD = 2;
+    public static int SNAKE = 2;
+    public static int FOOD = 1;
     /*
     Zustände der Zellen eines Playfields
      */
@@ -24,14 +26,11 @@ public class Playfield {
     }
 
     public void drawRandomApple(){
-        for (int j = 0; j < field.length; j++){
-            for (int i = 0; i < field[j].length; i++){
-                if (field[j][i] == EMPTY){
-                    field[i][j] = FOOD;
-                    break;
-                }
-            }
-        }
+        Random random = new Random();
+        int randomX = random.nextInt(field.length);
+        int randomY = random.nextInt(field[randomX].length);
+        field[randomX][randomY] = FOOD;
+
     }
 
 }

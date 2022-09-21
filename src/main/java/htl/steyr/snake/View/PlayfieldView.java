@@ -15,14 +15,15 @@ public class PlayfieldView {
         this.gridPane = gridPane;
     }
 
-    void drawPlayfield() {
+    public void drawPlayfield() {
         for (int i = 0; i < field.field.length; i++) {
             for (int j = 0; j < field.field.length; j++) {
+                System.out.println(field.field[i][j]);
                 switch (field.field[i][j]) {
                     case 0:
                         break;
                     case 1:
-                        ImageView imageView1 = new ImageView("apple.png");
+                        ImageView imageView1 = new ImageView("pictures_music/apple.png");
                         imageView1.setFitHeight(33.8);
                         imageView1.setFitWidth(33.8);
                         gridPane.add(imageView1, i, j);

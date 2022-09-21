@@ -5,6 +5,4 @@ import java.util.List;
 
 public class Snake {
 
-
-
 }
