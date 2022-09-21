@@ -1,0 +1,337 @@
+Index: src/main/resources/htl/steyr/snake/Playfield.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import java.lang.*?>\r\n<?import java.util.*?>\r\n<?import javafx.scene.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<AnchorPane xmlns=\"http://javafx.com/javafx\"\r\n            xmlns:fx=\"http://javafx.com/fxml\"\r\n            fx:controller=\"htl.steyr.snake.Controller.PlayfieldController\"\r\n            prefHeight=\"400.0\" prefWidth=\"600.0\">\r\n\r\n    <AnchorPane prefHeight=\"387.0\" prefWidth=\"443.0\">\r\n        <children>\r\n            <GridPane fx:id=\"boardView\" gridLinesVisible=\"true\" layoutX=\"85.0\" layoutY=\"37.0\" prefHeight=\"343.0\" prefWidth=\"338.0\">\r\n\r\n                <columnConstraints>\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                </columnConstraints>\r\n                <rowConstraints>\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                </rowConstraints>\r\n            </GridPane>\r\n            <GridPane layoutX=\"85.0\" layoutY=\"-1.0\" prefHeight=\"30.0\" prefWidth=\"338.0\">\r\n                <columnConstraints>\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                </columnConstraints>\r\n                <rowConstraints>\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                </rowConstraints>\r\n                <children>\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"A\" textAlignment=\"CENTER\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"B\" GridPane.columnIndex=\"1\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"C\" GridPane.columnIndex=\"2\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"D\" GridPane.columnIndex=\"3\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"E\" GridPane.columnIndex=\"4\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"F\" GridPane.columnIndex=\"5\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"G\" GridPane.columnIndex=\"6\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"H\" GridPane.columnIndex=\"7\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"I\" GridPane.columnIndex=\"8\" />\r\n                    <Label alignment=\"CENTER\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"J\" GridPane.columnIndex=\"9\" />\r\n                </children>\r\n            </GridPane>\r\n            <GridPane layoutX=\"44.0\" layoutY=\"35.0\" prefHeight=\"352.0\" prefWidth=\"34.0\">\r\n                <columnConstraints>\r\n                    <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"30.0\" />\r\n                </columnConstraints>\r\n                <rowConstraints>\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                    <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n                </rowConstraints>\r\n                <children>\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"1\" textAlignment=\"CENTER\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"2\" textAlignment=\"CENTER\" GridPane.rowIndex=\"1\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"3\" textAlignment=\"CENTER\" GridPane.rowIndex=\"2\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"4\" textAlignment=\"CENTER\" GridPane.rowIndex=\"3\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"5\" textAlignment=\"CENTER\" GridPane.rowIndex=\"4\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"6\" textAlignment=\"CENTER\" GridPane.rowIndex=\"5\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"7\" textAlignment=\"CENTER\" GridPane.rowIndex=\"6\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"8\" textAlignment=\"CENTER\" GridPane.rowIndex=\"7\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"37.0\" prefWidth=\"37.0\" text=\"9\" textAlignment=\"CENTER\" GridPane.rowIndex=\"8\" />\r\n                    <Label alignment=\"CENTER\" contentDisplay=\"RIGHT\" prefHeight=\"29.0\" prefWidth=\"32.0\" text=\"10\" textAlignment=\"CENTER\" GridPane.rowIndex=\"9\" />\r\n                </children>\r\n            </GridPane>\r\n        </children>\r\n    </AnchorPane>\r\n\r\n\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/htl/steyr/snake/Playfield.fxml b/src/main/resources/htl/steyr/snake/Playfield.fxml
+--- a/src/main/resources/htl/steyr/snake/Playfield.fxml	(revision de620f0efd29d5e0bcf5137ae456fdc23fef4bad)
++++ b/src/main/resources/htl/steyr/snake/Playfield.fxml	(date 1663745021973)
+@@ -1,105 +1,60 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import java.lang.*?>
+-<?import java.util.*?>
+-<?import javafx.scene.*?>
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.layout.*?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.ColumnConstraints?>
++<?import javafx.scene.layout.GridPane?>
++<?import javafx.scene.layout.RowConstraints?>
+ 
+-<AnchorPane xmlns="http://javafx.com/javafx"
+-            xmlns:fx="http://javafx.com/fxml"
+-            fx:controller="htl.steyr.snake.Controller.PlayfieldController"
+-            prefHeight="400.0" prefWidth="600.0">
+-
+-    <AnchorPane prefHeight="387.0" prefWidth="443.0">
+-        <children>
+-            <GridPane fx:id="boardView" gridLinesVisible="true" layoutX="85.0" layoutY="37.0" prefHeight="343.0" prefWidth="338.0">
++<AnchorPane prefHeight="615.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.snake.Controller.PlayfieldController">
++      <GridPane fx:id="boardView" gridLinesVisible="true" layoutX="191.0" layoutY="53.0" prefHeight="509.0" prefWidth="509.0">
+ 
+-                <columnConstraints>
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                </columnConstraints>
+-                <rowConstraints>
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                </rowConstraints>
+-            </GridPane>
+-            <GridPane layoutX="85.0" layoutY="-1.0" prefHeight="30.0" prefWidth="338.0">
+-                <columnConstraints>
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                </columnConstraints>
+-                <rowConstraints>
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                </rowConstraints>
+-                <children>
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="A" textAlignment="CENTER" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="B" GridPane.columnIndex="1" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="C" GridPane.columnIndex="2" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="D" GridPane.columnIndex="3" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="E" GridPane.columnIndex="4" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="F" GridPane.columnIndex="5" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="G" GridPane.columnIndex="6" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="H" GridPane.columnIndex="7" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="I" GridPane.columnIndex="8" />
+-                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="37.0" text="J" GridPane.columnIndex="9" />
+-                </children>
+-            </GridPane>
+-            <GridPane layoutX="44.0" layoutY="35.0" prefHeight="352.0" prefWidth="34.0">
+-                <columnConstraints>
+-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+-                </columnConstraints>
+-                <rowConstraints>
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+-                </rowConstraints>
+-                <children>
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="1" textAlignment="CENTER" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="2" textAlignment="CENTER" GridPane.rowIndex="1" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="3" textAlignment="CENTER" GridPane.rowIndex="2" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="4" textAlignment="CENTER" GridPane.rowIndex="3" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="5" textAlignment="CENTER" GridPane.rowIndex="4" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="6" textAlignment="CENTER" GridPane.rowIndex="5" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="7" textAlignment="CENTER" GridPane.rowIndex="6" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="8" textAlignment="CENTER" GridPane.rowIndex="7" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="37.0" text="9" textAlignment="CENTER" GridPane.rowIndex="8" />
+-                    <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="29.0" prefWidth="32.0" text="10" textAlignment="CENTER" GridPane.rowIndex="9" />
+-                </children>
+-            </GridPane>
+-        </children>
+-    </AnchorPane>
++          <columnConstraints>
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
++          </columnConstraints>
++          <rowConstraints>
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++          </rowConstraints>
++      </GridPane>
++   <Label fx:id="timeLabel" layoutX="406.0" layoutY="14.0" prefHeight="17.0" prefWidth="80.0" text="Time:   00:00" />
+ 
+ 
+ </AnchorPane>
+Index: src/main/java/htl/steyr/snake/Controller/PlayfieldController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package htl.steyr.snake.Controller;\r\n\r\nimport htl.steyr.snake.Model.Playfield;\r\nimport htl.steyr.snake.View.PlayfieldView;\r\n\r\npublic class PlayfieldController {\r\n\r\n    Playfield snakePlayfield = new Playfield();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java b/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java
+--- a/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java	(revision de620f0efd29d5e0bcf5137ae456fdc23fef4bad)
++++ b/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java	(date 1663747397215)
+@@ -2,9 +2,16 @@
+ 
+ import htl.steyr.snake.Model.Playfield;
+ import htl.steyr.snake.View.PlayfieldView;
++import javafx.scene.control.Label;
++import javafx.scene.layout.GridPane;
++
+ 
+ public class PlayfieldController {
+ 
++    public GridPane boardView;
++    public Label timeLabel;
+     Playfield snakePlayfield = new Playfield();
+ 
++
++
+ }
+Index: src/main/java/htl/steyr/snake/View/PlayfieldView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package htl.steyr.snake.View;\r\n\r\npublic class PlayfieldView {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/htl/steyr/snake/View/PlayfieldView.java b/src/main/java/htl/steyr/snake/View/PlayfieldView.java
+--- a/src/main/java/htl/steyr/snake/View/PlayfieldView.java	(revision de620f0efd29d5e0bcf5137ae456fdc23fef4bad)
++++ b/src/main/java/htl/steyr/snake/View/PlayfieldView.java	(date 1663747989987)
+@@ -2,4 +2,12 @@
+ 
+ public class PlayfieldView {
+ 
++
++
++
++
++    public void drawApple(int x, int y){
++
++    }
++
+ }
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module htl.steyr.snake {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n    opens htl.steyr.snake to javafx.fxml;\r\n    exports htl.steyr.snake;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision de620f0efd29d5e0bcf5137ae456fdc23fef4bad)
++++ b/src/main/java/module-info.java	(date 1663745720122)
+@@ -2,6 +2,6 @@
+     requires javafx.controls;
+     requires javafx.fxml;
+ 
+-    opens htl.steyr.snake to javafx.fxml;
++    opens htl.steyr.snake.Controller to javafx.fxml;
+     exports htl.steyr.snake;
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"54da48e5-e65f-4b5c-8f17-35d41ce2d5e7\" name=\"Changes\" comment=\"test\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2F4BrQxS3MCEp5frJD4JtEGDu0j\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"htl.steyr.snake.HelloApplication\" />\r\n      <module name=\"Snake\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"htl.steyr.snake.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"54da48e5-e65f-4b5c-8f17-35d41ce2d5e7\" name=\"Changes\" comment=\"\" />\r\n      <created>1663741678854</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1663741678854</updated>\r\n      <workItem from=\"1663741680280\" duration=\"1121000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Gitignore\">\r\n      <created>1663741814717</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663741814717</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"test\">\r\n      <created>1663742868310</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663742868310</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Gitignore\" />\r\n    <MESSAGE value=\"test\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"test\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision de620f0efd29d5e0bcf5137ae456fdc23fef4bad)
++++ b/.idea/workspace.xml	(date 1663747902645)
+@@ -4,9 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="test">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
++    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Playfield">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Playfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Playfield.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/HelloApplication.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -17,6 +21,7 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -62,7 +67,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1663741678854</updated>
+-      <workItem from="1663741680280" duration="1121000" />
++      <workItem from="1663741680280" duration="4638000" />
+     </task>
+     <task id="LOCAL-00001" summary="Gitignore">
+       <created>1663741814717</created>
+@@ -78,7 +83,42 @@
+       <option name="project" value="LOCAL" />
+       <updated>1663742868310</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Playfield init">
++      <created>1663743333404</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1663743333404</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Playfield init">
++      <created>1663743530925</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1663743530925</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Playfield init">
++      <created>1663743605975</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1663743605975</updated>
++    </task>
++    <task id="LOCAL-00006" summary="PlayfieldController">
++      <created>1663743753879</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1663743753879</updated>
++    </task>
++    <task id="LOCAL-00007" summary="Playfield">
++      <created>1663744510086</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1663744510086</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -98,6 +138,9 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Gitignore" />
+     <MESSAGE value="test" />
+-    <option name="LAST_COMMIT_MESSAGE" value="test" />
++    <MESSAGE value="Playfield init" />
++    <MESSAGE value="PlayfieldController" />
++    <MESSAGE value="Playfield" />
++    <option name="LAST_COMMIT_MESSAGE" value="Playfield" />
+   </component>
+ </project>
+\ No newline at end of file
