@@ -4,7 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.snake.Controller.WelcomeController">
+<?import java.net.URL?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="anchor" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.snake.Controller.WelcomeController">
+  <stylesheets>
+     <URL value="@../../../WelcomeStyle.css" />
+  </stylesheets>
+
    <children>
       <Button fx:id="helpbtn" layoutX="496.0" layoutY="26.0" mnemonicParsing="false" onAction="#clickhelpbtn" text="Help" />
       <Button fx:id="playbtn" layoutX="274.0" layoutY="238.0" mnemonicParsing="false" onAction="#clickplaybtn" text="Play" />

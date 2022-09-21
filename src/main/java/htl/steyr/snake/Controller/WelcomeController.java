@@ -19,10 +19,13 @@ public class WelcomeController {
 
     public void clickhelpbtn(ActionEvent actionEvent) {
 
+        // das Spiel und die Steuerung kurz erklären auf Englisch
     }
 
     public void clicksettingsbtn(ActionEvent actionEvent){
-
+        // Weiterleiten auf Settings.fxml dann wieder zurück auf hello-view.fxml
+        // dann playbtn
+        // gleich wie clickplaybtn Funktion
     }
 
     public void clickplaybtn(ActionEvent actionEvent) throws IOException {
@@ -41,12 +44,13 @@ public class WelcomeController {
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc =fxmlLoader.getController();
 
-        stage.setTitle("Snake ");
+        stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+
 
 
     }
