@@ -44,8 +44,12 @@ public class Playfield {
         Random random = new Random();
         int randomX = random.nextInt(field.length);
         int randomY = random.nextInt(field[randomX].length);
+        while(field[randomX][randomY] != EMPTY){
+            random = new Random();
+            randomX = random.nextInt(field.length);
+            randomY = random.nextInt(field[randomX].length);
+        }
         field[randomX][randomY] = FOOD;
-
     }
 
 }

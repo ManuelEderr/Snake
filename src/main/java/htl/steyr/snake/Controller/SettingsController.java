@@ -33,6 +33,7 @@ public class SettingsController {
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc =fxmlLoader.getController();
+        pc.afterSwitch();
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
