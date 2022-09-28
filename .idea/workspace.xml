@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="View">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/WelcomeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_09_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_09_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_10_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_10_13__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_10_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_10_59__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_09_2022_11_01__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,11 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -80,6 +85,7 @@
       <workItem from="1663741680280" duration="1121000" />
       <workItem from="1663743703229" duration="2041000" />
       <workItem from="1663745776850" duration="4195000" />
+      <workItem from="1664346805864" duration="839000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -132,22 +138,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gitignore" />
     <MESSAGE value="test" />
     <MESSAGE value="Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
