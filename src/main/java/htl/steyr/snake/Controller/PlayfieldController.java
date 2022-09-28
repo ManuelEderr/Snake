@@ -23,15 +23,14 @@ public class PlayfieldController {
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
 
-    Snake snake = new Snake(snakePlayfield);
-
+    Snake snake = new Snake();
 
 
     public void afterSwitch() {
         snakePlayfield.drawRandomApple();
-        snakePlayfield = snake.move(UP);
-        snakePlayfield = snake.move(RIGHT);
-        snakePlayfield = snake.move(UP);
+        snakePlayfield = snake.move(snakePlayfield, UP);
+        snakePlayfield = snake.move(snakePlayfield, RIGHT);
+        snakePlayfield = snake.move(snakePlayfield, UP);
 
         pfView.drawPlayfield();
     }
