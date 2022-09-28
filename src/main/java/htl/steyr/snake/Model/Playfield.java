@@ -14,8 +14,7 @@ public class Playfield {
      */
     public int[][] field;
 
-
-    public Playfield(){
+    public Playfield() {
         field = new int[MAX_X][MAX_Y];
 
         for (int j = 0; j < MAX_Y; j++) {
@@ -25,7 +24,23 @@ public class Playfield {
         }
     }
 
-    public void drawRandomApple(){
+    public void setSNAKE(int x, int y) {
+        field[x][y] = SNAKE;
+    }
+
+    public void setEMPTY(int x, int y) {
+        field[x][y] = EMPTY;
+    }
+
+    public void setPlayfieldEMPTY() {
+        for (int j = 0; j < MAX_Y; j++) {
+            for (int i = 0; i < MAX_X; i++) {
+                field[j][i] = EMPTY;
+            }
+        }
+    }
+
+    public void drawRandomApple() {
         Random random = new Random();
         int randomX = random.nextInt(field.length);
         int randomY = random.nextInt(field[randomX].length);
