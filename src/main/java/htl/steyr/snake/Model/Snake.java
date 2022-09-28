@@ -24,11 +24,11 @@ public class Snake {
                 //UP
                 System.out.println("^");
                 System.out.println("|");
-                snake.set(0, new Point2D(snake.get(0).getX(), snake.get(0).getY() + 1));
+                snake.set(0, new Point2D(snake.get(0).getX(), snake.get(0).getY() - 1));
                 break;
             case 1:
                 //DOWN
-                snake.set(0, new Point2D(snake.get(0).getX(), snake.get(0).getY() - 1));
+                snake.set(0, new Point2D(snake.get(0).getX(), snake.get(0).getY() + 1));
                 break;
             case 2:
                 //RIGHT
