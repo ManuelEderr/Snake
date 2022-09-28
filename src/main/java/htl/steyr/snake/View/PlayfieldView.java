@@ -37,7 +37,8 @@ public class PlayfieldView {
                         imageView2.setFitHeight(33.8);
                         imageView2.setFitWidth(33.8);
                         gridPane.add(imageView2, i, j);
-                        // snake
+                        break;
+
                 }
             }
         }
