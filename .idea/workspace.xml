@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="bist deppert">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img.png" afterDir="false" />
+    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Snake">
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -87,7 +81,7 @@
       <workItem from="1663743703229" duration="2041000" />
       <workItem from="1663745776850" duration="4195000" />
       <workItem from="1664346805864" duration="5072000" />
-      <workItem from="1664353533700" duration="3918000" />
+      <workItem from="1664353533700" duration="1667000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -131,21 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664347725368</updated>
     </task>
-    <task id="LOCAL-00007" summary="bist deppert">
-      <created>1664355448645</created>
+    <task id="LOCAL-00007" summary="Snake">
+      <created>1664357279776</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1664355448645</updated>
+      <updated>1664357279776</updated>
     </task>
-    <task id="LOCAL-00008" summary="bist deppert">
-      <created>1664356115044</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1664356115044</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,45 +148,24 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gitignore" />
     <MESSAGE value="test" />
     <MESSAGE value="Update" />
     <MESSAGE value="View" />
-    <MESSAGE value="bist deppert" />
-    <option name="LAST_COMMIT_MESSAGE" value="bist deppert" />
+    <MESSAGE value="Snake" />
+    <option name="LAST_COMMIT_MESSAGE" value="Snake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java</url>
-          <line>43</line>
+          <line>28</line>
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" line="51">
-        <watch expression="((Playfield)this).field" language="JAVA" custom="htl.steyr.snake.Model.Playfield" />
-      </inline-watch>
-    </watches-manager>
   </component>
 </project>

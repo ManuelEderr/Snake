@@ -7,23 +7,21 @@ import java.util.List;
 
 public class Snake {
     ArrayList<Point2D> snake = new ArrayList<>();
-    public Playfield playfield;
 
-    public Snake(Playfield playfield) {
-        this.playfield = playfield;
-        snake.add(new Point2D(4, 8));
-        snake.add(new Point2D(4, 7));
-        snake.add(new Point2D(4, 6));
+    public Snake() {
+        snake.add(new Point2D(6, 10));
+        snake.add(new Point2D(5, 10));
+        snake.add(new Point2D(4, 10));
     }
 
-    public Playfield move(int i) {
+    public Playfield move(Playfield playfield, int direction) {
         Point2D temp1 = snake.get(0);
         Point2D temp2;
-        switch (i) {
+        boolean apple = false;
+
+        switch (direction) {
             case 0:
                 //UP
-                System.out.println("^");
-                System.out.println("|");
                 snake.set(0, new Point2D(snake.get(0).getX(), snake.get(0).getY() - 1));
                 break;
             case 1:
@@ -32,20 +30,26 @@ public class Snake {
                 break;
             case 2:
                 //RIGHT
-                System.out.println("->");
                 snake.set(0, new Point2D(snake.get(0).getX() + 1, snake.get(0).getY()));
                 break;
             case 3:
                 //LEFT
-                System.out.println("<-");
                 snake.set(0, new Point2D(snake.get(0).getX() - 1, snake.get(0).getY()));
                 break;
+        }
+
+        if (playfield.field[(int) snake.get(0).getX()][(int) snake.get(0).getY()] == 1) {
+            apple = true;
         }
 
         for (int j = 1; j < snake.size(); j++) {
             temp2 = snake.get(j);
             snake.set(j, temp1);
             temp1 = temp2;
+        }
+
+        if (apple) {
+            snake.add(temp1);
         }
 
         playfield.setPlayfieldEMPTY();
