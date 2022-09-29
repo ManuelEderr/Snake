@@ -28,11 +28,11 @@ public class PlayfieldController {
 
 
     public void afterSwitch() {
-        snakePlayfield.drawRandomApple();
         snakePlayfield = snake.move(UP);
         snakePlayfield = snake.move(RIGHT);
         snakePlayfield = snake.move(UP);
 
+        snakePlayfield.drawRandomApple();
         pfView.drawPlayfield();
     }
 

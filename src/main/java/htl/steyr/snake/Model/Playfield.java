@@ -42,8 +42,8 @@ public class Playfield {
 
     public void drawRandomApple() {
         Random random = new Random();
-        int randomX = 0;//random.nextInt(field.length);
-        int randomY = 1;//random.nextInt(field[randomX].length);
+        int randomX = random.nextInt(field.length);
+        int randomY = random.nextInt(field[randomX].length);
         while(field[randomX][randomY] != EMPTY){
             random = new Random();
             randomX = random.nextInt(field.length);

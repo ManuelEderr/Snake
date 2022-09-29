@@ -26,16 +26,16 @@ public class PlayfieldView {
                         break;
                     case 1:
                         ImageView imageView1 = new ImageView("apple.png");
-                        imageView1.setFitHeight(33.8);
-                        imageView1.setFitWidth(33.8);
+                        imageView1.setFitHeight(22.8);
+                        imageView1.setFitWidth(22.8);
                         System.out.println("x-Achse: " + i);
                         System.out.println("y-Achse: " + j);
                         gridPane.add(imageView1, i, j);
                         break;
                     case 2:
                         ImageView imageView2 = new ImageView("img.png");
-                        imageView2.setFitHeight(33.8);
-                        imageView2.setFitWidth(33.8);
+                        imageView2.setFitHeight(22.8);
+                        imageView2.setFitWidth(22.8);
                         gridPane.add(imageView2, i, j);
                         break;
 
