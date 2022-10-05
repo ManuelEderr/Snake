@@ -39,7 +39,6 @@ public class SettingsController {
         mediaPlayer.setAutoPlay(true);
         startvalue = volumeSlider.getValue();
 
-
         Difficulty();
     }
 
@@ -50,7 +49,6 @@ public class SettingsController {
 
         if(value == 0){
             mediaPlayer.stop();
-
         }
       difficult = (String) chooseDifficulty.getValue();
     }
@@ -82,7 +80,6 @@ public class SettingsController {
         mediaPlayer.play();
         value = volumeSlider.getValue();
 
-
         if(startvalue != value){
             volumeSlider.setValue(value);
 
@@ -100,7 +97,6 @@ public class SettingsController {
     }
 
     public void Difficulty(){
-
         chooseDifficulty.setItems(FXCollections.observableArrayList("slow","normal","fast"));
 
     }
