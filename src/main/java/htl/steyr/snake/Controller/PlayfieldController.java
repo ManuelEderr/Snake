@@ -9,6 +9,7 @@ import javafx.scene.layout.GridPane;
 
 public class PlayfieldController {
 
+
     public GridPane boardView = new GridPane();
 
     public static int UP = 0;

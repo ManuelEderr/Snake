@@ -5,7 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Snake">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/soundPlay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_12_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_11_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_12_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Playfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Playfield.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/WelcomeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/WelcomeStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/HelloApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Playfield.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +43,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -34,22 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/htl/steyr/snake" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/43670/IdeaProjects/ITP_ROMO_4AHITN/Snake/pictures_music&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\43670\IdeaProjects\ITP_ROMO_4AHITN\Snake\pictures_music" />
+      <recent name="C:\Users\43670\IdeaProjects\ITP_ROMO_4AHITN\Snake\src\main" />
       <recent name="C:\Users\maede\Documents\4ahitn\Snake1\src\main\resources\htl\steyr\snake" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\43670\IdeaProjects\ITP_ROMO_4AHITN\Snake\src\main\resources\htl\steyr\snake\Controller" />
       <recent name="C:\Users\maede\Documents\4ahitn\Snake1\src\main\resources" />
       <recent name="C:\Users\43670\IdeaProjects\ITP_ROMO_4AHITN\Snake\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SnakeApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="htl.steyr.snake.HelloApplication" />
       <module name="Snake" />
@@ -63,8 +98,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SnakeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="htl.steyr.snake.Controller.SnakeApplication" />
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="htl.steyr.snake.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SnakeApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -82,6 +131,13 @@
       <workItem from="1663745776850" duration="4195000" />
       <workItem from="1664346805864" duration="5072000" />
       <workItem from="1664353533700" duration="1667000" />
+      <workItem from="1664444423704" duration="194000" />
+      <workItem from="1664460552027" duration="6398000" />
+      <workItem from="1664517477904" duration="258000" />
+      <workItem from="1664534428918" duration="8000" />
+      <workItem from="1664616811651" duration="3539000" />
+      <workItem from="1664863460266" duration="9000" />
+      <workItem from="1664875184596" duration="930000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
