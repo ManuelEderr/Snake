@@ -38,6 +38,7 @@ public class SettingsController {
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
         startvalue = volumeSlider.getValue();
+        System.out.println("start " +startvalue);
 
         Difficulty();
     }
@@ -49,6 +50,7 @@ public class SettingsController {
 
         if(value == 0){
             mediaPlayer.stop();
+            System.out.println("stop");
         }
       difficult = (String) chooseDifficulty.getValue();
     }
@@ -79,10 +81,11 @@ public class SettingsController {
     public void MediaControll() {
         mediaPlayer.play();
         value = volumeSlider.getValue();
+        System.out.println(value);
 
         if(startvalue != value){
             volumeSlider.setValue(value);
-
+            mediaPlayer.setVolume(value);
         }
 
      /*
@@ -97,6 +100,7 @@ public class SettingsController {
     }
 
     public void Difficulty(){
+    //    chooseDifficulty = new ChoiceBox(FXCollections.observableArrayList("slow","normal","fast"));
         chooseDifficulty.setItems(FXCollections.observableArrayList("slow","normal","fast"));
 
     }
