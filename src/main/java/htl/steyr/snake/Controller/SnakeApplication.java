@@ -1,6 +1,5 @@
 package htl.steyr.snake.Controller;
 
-import htl.steyr.snake.Model.ThreadClass1;
 import htl.steyr.snake.View.PlayfieldView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,8 +23,6 @@ public class SnakeApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        System.out.println("start");
-
         Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Splash-view.fxml")));
         Scene scene = new Scene(pane);
 
@@ -42,7 +39,6 @@ public class SnakeApplication extends Application {
 
     public static void main(String[] args) {
 
-        System.out.println("main");
 /*
         ThreadClass1 thread = new ThreadClass1("pictures_music\\legendarymusic.mp3");
         Thread thread2 = new Thread(thread);
