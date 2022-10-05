@@ -18,8 +18,6 @@ import java.util.Objects;
 
 public class SnakeApplication extends Application {
 
-
-
     @Override
     public void start(Stage stage) throws IOException {
 

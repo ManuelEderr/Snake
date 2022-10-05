@@ -44,7 +44,7 @@ public class Playfield {
         Random random = new Random();
         int randomX = random.nextInt(field.length);
         int randomY = random.nextInt(field[randomX].length);
-        while(field[randomX][randomY] != EMPTY){
+        while (field[randomX][randomY] != EMPTY) {
             random = new Random();
             randomX = random.nextInt(field.length);
             randomY = random.nextInt(field[randomX].length);
@@ -52,4 +52,18 @@ public class Playfield {
         field[randomX][randomY] = FOOD;
     }
 
+    public boolean containsApple() {
+        boolean r = false;
+
+        for (int j = 0; j < MAX_Y; j++) {
+            for (int i = 0; i < MAX_X; i++) {
+                if (field[j][i] == FOOD) {
+                    r = true;
+                    break;
+                }
+            }
+        }
+
+        return r;
+    }
 }

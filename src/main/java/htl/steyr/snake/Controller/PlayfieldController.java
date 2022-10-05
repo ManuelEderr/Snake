@@ -4,11 +4,16 @@ import htl.steyr.snake.Model.Playfield;
 import htl.steyr.snake.Model.Snake;
 import htl.steyr.snake.View.PlayfieldView;
 import javafx.scene.control.Label;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javafx.scene.layout.GridPane;
 
+import java.util.Objects;
 
-public class PlayfieldController {
 
+public class PlayfieldController implements KeyListener {
 
     public GridPane boardView = new GridPane();
 
@@ -19,6 +24,7 @@ public class PlayfieldController {
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
     PlayfieldView pfView;
+    private int direction;
 
     public void initialize() {
         pfView = new PlayfieldView(snakePlayfield, boardView);
@@ -27,13 +33,48 @@ public class PlayfieldController {
     Snake snake = new Snake();
 
     public void afterSwitch() {
-        snakePlayfield.drawRandomApple();
-        snakePlayfield = snake.move(snakePlayfield, UP);
-        snakePlayfield = snake.move(snakePlayfield, RIGHT);
-        snakePlayfield = snake.move(snakePlayfield, UP);
+        System.out.println("afterSwitch");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("run");
+                if (!snakePlayfield.containsApple()) {
+                    snakePlayfield.drawRandomApple();
+                }
 
-        snakePlayfield.drawRandomApple();
-        pfView.drawPlayfield();
+                snakePlayfield = snake.move(snakePlayfield, direction);
+
+                pfView.drawPlayfield();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }).start();
+
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (Objects.equals(e.getKeyChar(), KeyEvent.VK_UP)) {
+            direction = UP;
+        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_DOWN)) {
+            direction = DOWN;
+        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_RIGHT)) {
+            direction = RIGHT;
+        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_LEFT)) {
+            direction = LEFT;
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }
