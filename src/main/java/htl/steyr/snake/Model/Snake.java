@@ -3,7 +3,6 @@ package htl.steyr.snake.Model;
 import javafx.geometry.Point2D;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Snake {
     private static final int MAX_X = 20;
@@ -40,23 +39,27 @@ public class Snake {
                 break;
         }
 
-        if (playfield.field[(int) snake.get(0).getX()][(int) snake.get(0).getY()] == 1) {
-            apple = true;
-        }
+        if (!isCollision()) {
+            if (playfield.field[(int) snake.get(0).getX()][(int) snake.get(0).getY()] == 1) {
+                apple = true;
+            }
 
-        for (int j = 1; j < snake.size(); j++) {
-            temp2 = snake.get(j);
-            snake.set(j, temp1);
-            temp1 = temp2;
-        }
+            for (int j = 1; j < snake.size(); j++) {
+                temp2 = snake.get(j);
+                snake.set(j, temp1);
+                temp1 = temp2;
+            }
 
-        if (apple) {
-            snake.add(temp1);
-        }
+            if (apple) {
+                snake.add(temp1);
+            }
 
-        playfield.setPlayfieldEMPTY();
-        for (int k = 0; k < snake.size(); k++) {
-            playfield.setSNAKE((int) snake.get(k).getX(), (int) snake.get(k).getY());
+            playfield.deleteSnake();
+            for (int k = 0; k < snake.size(); k++) {
+                playfield.setSNAKE((int) snake.get(k).getX(), (int) snake.get(k).getY());
+            }
+        } else {
+            playfield = null;
         }
 
         return playfield;
@@ -65,17 +68,18 @@ public class Snake {
     public boolean isCollision() {
         boolean r = false;
 
-        for (int i = 1; i < snake.size(); i++) {
-            if (snake.get(i).getX() >= MAX_X) {
-                r = true;
-                break;
-            }
-            if (snake.get(i).getY() >= MAX_Y) {
-                r = true;
-                break;
-            }
+        if (snake.get(0).getX() >= MAX_X) {
+            r = true;
+        } else if (snake.get(0).getY() >= MAX_Y) {
+            r = true;
+        } else if (snake.get(0).getX() <= -1) {
+            r = true;
+        } else if (snake.get(0).getY() <= -1) {
+            r = true;
+        }
 
-            if (snake.get(0) == snake.get(i)) {
+        for (int i = 1; i < snake.size(); i++) {
+            if (snake.get(0).getX() == snake.get(i).getX() && snake.get(0).getY() == snake.get(i).getY()) {
                 r = true;
                 break;
             }

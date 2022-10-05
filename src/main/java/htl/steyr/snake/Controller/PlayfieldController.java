@@ -23,8 +23,6 @@ public class PlayfieldController {
     Playfield snakePlayfield = new Playfield();
     PlayfieldView pfView;
     private int direction = RIGHT;
-    private boolean collision = false;
-    private long lasttick = 0;
 
     public void initialize() {
         pfView = new PlayfieldView(snakePlayfield, boardView);
@@ -38,7 +36,6 @@ public class PlayfieldController {
                 switch (keyEvent.getCode()) {
                     case W:
                         direction = UP;
-                        System.out.println("UP");
                         break;
                     case S:
                         direction = DOWN;
@@ -56,30 +53,22 @@ public class PlayfieldController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (lasttick == 0) {
-                    lasttick = now;
+                if (!snakePlayfield.containsApple()) {
+                    snakePlayfield.drawRandomApple();
                 }
 
-                //if (!snakePlayfield.containsApple()) {
-                    snakePlayfield.drawRandomApple();
-                //}
+                snakePlayfield = snake.move(snakePlayfield, direction);
 
-                if (snake.isCollision()) {
+                if (snakePlayfield == null) {
                     this.stop();
-                } else {
-                    snakePlayfield = snake.move(snakePlayfield, direction);
                 }
 
                 pfView.drawPlayfield();
 
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-
             }
-        }.start();
+        }.
+
+                start();
 
 
     }

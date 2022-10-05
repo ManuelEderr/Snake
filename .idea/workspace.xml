@@ -8,13 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/WelcomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,6 +104,7 @@
       <workItem from="1664363085094" duration="492000" />
       <workItem from="1664863510772" duration="139000" />
       <workItem from="1664949952158" duration="8510000" />
+      <workItem from="1664958909166" duration="1269000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -179,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664953536636</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Snake">
+      <created>1664959101622</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664959101622</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -28,14 +28,12 @@ public class Playfield {
         field[x][y] = SNAKE;
     }
 
-    public void setEMPTY(int x, int y) {
-        field[x][y] = EMPTY;
-    }
-
-    public void setPlayfieldEMPTY() {
+    public void deleteSnake() {
         for (int j = 0; j < MAX_Y; j++) {
             for (int i = 0; i < MAX_X; i++) {
-                field[j][i] = EMPTY;
+                if (field[j][i] == SNAKE) {
+                    field[j][i] = EMPTY;
+                }
             }
         }
     }
@@ -50,6 +48,7 @@ public class Playfield {
             randomY = random.nextInt(field[randomX].length);
         }
         field[randomX][randomY] = FOOD;
+        System.out.println(randomX + " - " + randomY);
     }
 
     public boolean containsApple() {
