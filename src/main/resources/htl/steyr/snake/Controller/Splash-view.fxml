@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" fx:id="apane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to left bottom, #021634, #2d1946, #581149, #7e003c, #981022);;" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="htl.steyr.snake.Controller.SplashController">
+    <children>
+        <Label layoutX="167.0" layoutY="163.0" text="Snake" textFill="WHITE">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
