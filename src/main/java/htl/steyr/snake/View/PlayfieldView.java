@@ -23,13 +23,15 @@ public class PlayfieldView {
             for (int j = 0; j < field.field.length; j++) {
                 switch (field.field[i][j]) {
                     case 0:
+                        ImageView imageView0 = new ImageView("Heisenberg.png");
+                        imageView0.setFitHeight(22.8);
+                        imageView0.setFitWidth(22.8);
+                        gridPane.add(imageView0, i, j);
                         break;
                     case 1:
                         ImageView imageView1 = new ImageView("apple.png");
                         imageView1.setFitHeight(22.8);
                         imageView1.setFitWidth(22.8);
-                        System.out.println("x-Achse: " + i);
-                        System.out.println("y-Achse: " + j);
                         gridPane.add(imageView1, i, j);
                         break;
                     case 2:

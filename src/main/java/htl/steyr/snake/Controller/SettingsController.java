@@ -32,7 +32,7 @@ URL u = SnakeApplication.class.getResource("Playfield.fxml");
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc =fxmlLoader.getController();
-        pc.afterSwitch();
+        pc.afterSwitch(scene);
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);

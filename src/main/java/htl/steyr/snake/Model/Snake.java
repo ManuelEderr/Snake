@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Snake {
+    private static final int MAX_X = 20;
+    private static final int MAX_Y = 20;
     ArrayList<Point2D> snake = new ArrayList<>();
 
     public Snake() {
@@ -54,10 +56,31 @@ public class Snake {
 
         playfield.setPlayfieldEMPTY();
         for (int k = 0; k < snake.size(); k++) {
-            System.out.println(snake.get(k).toString());
             playfield.setSNAKE((int) snake.get(k).getX(), (int) snake.get(k).getY());
         }
 
         return playfield;
+    }
+
+    public boolean isCollision() {
+        boolean r = false;
+
+        for (int i = 1; i < snake.size(); i++) {
+            if (snake.get(i).getX() >= MAX_X) {
+                r = true;
+                break;
+            }
+            if (snake.get(i).getY() >= MAX_Y) {
+                r = true;
+                break;
+            }
+
+            if (snake.get(0) == snake.get(i)) {
+                r = true;
+                break;
+            }
+        }
+
+        return r;
     }
 }

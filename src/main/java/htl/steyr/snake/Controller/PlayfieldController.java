@@ -3,17 +3,15 @@ package htl.steyr.snake.Controller;
 import htl.steyr.snake.Model.Playfield;
 import htl.steyr.snake.Model.Snake;
 import htl.steyr.snake.View.PlayfieldView;
+import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 
-import java.util.Objects;
-
-
-public class PlayfieldController implements KeyListener {
+public class PlayfieldController {
 
     public GridPane boardView = new GridPane();
 
@@ -24,7 +22,9 @@ public class PlayfieldController implements KeyListener {
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
     PlayfieldView pfView;
-    private int direction;
+    private int direction = RIGHT;
+    private boolean collision = false;
+    private long lasttick = 0;
 
     public void initialize() {
         pfView = new PlayfieldView(snakePlayfield, boardView);
@@ -32,49 +32,55 @@ public class PlayfieldController implements KeyListener {
 
     Snake snake = new Snake();
 
-    public void afterSwitch() {
-        System.out.println("afterSwitch");
-        new Thread(new Runnable() {
+    public void afterSwitch(Scene scene) {
+        Platform.runLater(() -> {
+            scene.setOnKeyPressed(keyEvent -> {
+                switch (keyEvent.getCode()) {
+                    case W:
+                        direction = UP;
+                        System.out.println("UP");
+                        break;
+                    case S:
+                        direction = DOWN;
+                        break;
+                    case A:
+                        direction = LEFT;
+                        break;
+                    case D:
+                        direction = RIGHT;
+                        break;
+                }
+            });
+        });
+
+        new AnimationTimer() {
             @Override
-            public void run() {
-                System.out.println("run");
-                if (!snakePlayfield.containsApple()) {
-                    snakePlayfield.drawRandomApple();
+            public void handle(long now) {
+                if (lasttick == 0) {
+                    lasttick = now;
                 }
 
-                snakePlayfield = snake.move(snakePlayfield, direction);
+                //if (!snakePlayfield.containsApple()) {
+                    snakePlayfield.drawRandomApple();
+                //}
+
+                if (snake.isCollision()) {
+                    this.stop();
+                } else {
+                    snakePlayfield = snake.move(snakePlayfield, direction);
+                }
 
                 pfView.drawPlayfield();
+
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
+
             }
-        }).start();
+        }.start();
 
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        if (Objects.equals(e.getKeyChar(), KeyEvent.VK_UP)) {
-            direction = UP;
-        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_DOWN)) {
-            direction = DOWN;
-        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_RIGHT)) {
-            direction = RIGHT;
-        } else if (Objects.equals(e.getKeyChar(), KeyEvent.VK_LEFT)) {
-            direction = LEFT;
-        }
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
 
     }
 }

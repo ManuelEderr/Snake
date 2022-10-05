@@ -31,7 +31,8 @@ public class WelcomeController {
     public void clickplaybtn(ActionEvent actionEvent) throws IOException {
         changeScenePlayfield();
     }
-    public void changeScenePlayfield() throws IOException{
+
+    public void changeScenePlayfield() throws IOException {
         Stage stage = new Stage();
 
         Stage stageclose = (Stage) playbtn.getScene().getWindow();
@@ -43,8 +44,8 @@ public class WelcomeController {
 
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
-        PlayfieldController pc =fxmlLoader.getController();
-        pc.afterSwitch();
+        PlayfieldController pc = fxmlLoader.getController();
+        pc.afterSwitch(scene);
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
@@ -56,7 +57,7 @@ public class WelcomeController {
     }
 
 
-    public void changeSceneSettings() throws IOException{
+    public void changeSceneSettings() throws IOException {
         Stage stage = new Stage();
 
         Stage stageclose = (Stage) settingsbtn.getScene().getWindow();
@@ -67,7 +68,7 @@ public class WelcomeController {
 
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
-        SettingsController sc =fxmlLoader.getController();
+        SettingsController sc = fxmlLoader.getController();
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
@@ -76,5 +77,5 @@ public class WelcomeController {
         stage.setResizable(false);
         stage.show();
     }
-    }
+}
 
