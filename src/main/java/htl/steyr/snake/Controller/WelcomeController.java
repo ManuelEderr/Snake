@@ -50,13 +50,12 @@ public class WelcomeController {
         stageclose.close();
 
         final FXMLLoader fxmlLoader = new FXMLLoader();
-//        URL u = HelloApplication.class.getResource("Playfield.fxml");
         URL u = SnakeApplication.class.getResource("Playfield.fxml");
 
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc = fxmlLoader.getController();
-        //pc.afterSwitch(scene, "normal","5");
+        pc.afterSwitch(scene, "normal","0");
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);

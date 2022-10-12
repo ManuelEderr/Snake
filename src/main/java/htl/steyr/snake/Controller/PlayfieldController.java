@@ -6,6 +6,7 @@ import htl.steyr.snake.View.PlayfieldView;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
@@ -27,6 +28,8 @@ public class PlayfieldController {
     private int direction = RIGHT;
     private long lasttick;
     private int barrierCount = 0;
+    private boolean pause;
+    private boolean end;
 
     public void initialize() {
         pfView = new PlayfieldView(snakePlayfield, boardView);
@@ -65,6 +68,20 @@ public class PlayfieldController {
                     case D:
                         direction = RIGHT;
                         break;
+                    case SPACE:
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        if (pause) {
+                            pause = false;
+                        } else {
+                            alert.setTitle("Pause");
+                            alert.setContentText("Press SPACE to continue");
+                            alert.show();
+                            pause = true;
+                        }
+                        break;
+                    case ESCAPE:
+                        end = true;
+                        break;
                 }
             });
         });
@@ -72,30 +89,38 @@ public class PlayfieldController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (lasttick == 0) {
-                    lasttick = now;
+                System.out.println(end);
+                if (end) {
+                    System.out.println("Game End");
+                    this.stop();
                 }
 
-                System.out.println(now);
-                if (now - lasttick > speed) {
-                    if (!snakePlayfield.containsApple()) {
-                        snakePlayfield.drawRandomApple();
+                if (!pause) {
+                    if (lasttick == 0) {
+                        lasttick = now;
                     }
 
-                    if (!snakePlayfield.containsBarrier()) {
-                        snakePlayfield.drawRandomBarrier(barrierCount);
+                    System.out.println(now);
+                    if (now - lasttick > speed) {
+                        if (!snakePlayfield.containsApple()) {
+                            snakePlayfield.drawRandomApple();
+                        }
+
+                        if (!snakePlayfield.containsBarrier()) {
+                            snakePlayfield.drawRandomBarrier(barrierCount);
+                        }
+
+                        snakePlayfield = snake.move(snakePlayfield, direction);
+
+                        if (snakePlayfield == null) {
+                            this.stop();
+                            System.out.println("GAME OVER");
+                        }
+
+                        pfView.drawPlayfield();
+
+                        lasttick = now;
                     }
-
-                    snakePlayfield = snake.move(snakePlayfield, direction);
-
-                    if (snakePlayfield == null) {
-                        this.stop();
-                        System.out.println("GAME OVER");
-                    }
-
-                    pfView.drawPlayfield();
-
-                    lasttick = now;
                 }
             }
         }.start();

@@ -8,7 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class PlayfieldView {
     ImageView imageView1;
@@ -48,7 +50,15 @@ public class PlayfieldView {
                         gridPane.add(imageView2, i, j);
                         break;
                     case 3:
-                        imageView3 = new ImageView("barrier.png");
+                        Random random = new Random();
+                        int zufallsZahl = random.nextInt(2);
+
+                        if (zufallsZahl == 0) {
+                            imageView3 = new ImageView("barrier1.png");
+                        } else {
+                            imageView3 = new ImageView("barrier2.png");
+                        }
+
                         imageView3.setFitHeight(22.8);
                         imageView3.setFitWidth(22.8);
                         gridPane.add(imageView3, i, j);

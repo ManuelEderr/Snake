@@ -35,11 +35,11 @@ public class SettingsController {
         path = "pictures_music\\legendarymusic.mp3";
         media = new Media(new File(path).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
-     //   mediaPlayer.setAutoPlay(true);
+        //   mediaPlayer.setAutoPlay(true);
         startvalue = volumeSlider.getValue();
-        System.out.println("start " +startvalue);
-        chooseDifficulty.setItems(FXCollections.observableArrayList("slow","normal","fast"));
-        chooseBarriers.setItems(FXCollections.observableArrayList("0","5","10","20"));
+        System.out.println("start " + startvalue);
+        chooseDifficulty.setItems(FXCollections.observableArrayList("slow", "normal", "fast"));
+        chooseBarriers.setItems(FXCollections.observableArrayList("0", "5", "10", "20"));
 
     }
 
@@ -48,7 +48,7 @@ public class SettingsController {
 
         changeScenePlayfield();
 
-        if(value == 0){
+        if (value == 0) {
             mediaPlayer.stop();
             System.out.println("stop");
         }
@@ -84,19 +84,19 @@ public class SettingsController {
         value = volumeSlider.getValue();
         System.out.println(value);
 
-        if(startvalue != value){
+        if (startvalue != value) {
             volumeSlider.setValue(value);
             mediaPlayer.setVolume(value);
         }
 
     }
 
-    public String Difficulty(){
+    public String Difficulty() {
         difficult = (String) chooseDifficulty.getValue();
         return difficult;
     }
 
-    public String SetBarriers(){
+    public String SetBarriers() {
         barriers = (String) chooseBarriers.getValue();
         return barriers;
     }
