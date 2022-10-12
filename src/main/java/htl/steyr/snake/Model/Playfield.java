@@ -9,6 +9,8 @@ public class Playfield {
     public static int EMPTY = 0;
     public static int SNAKE = 2;
     public static int FOOD = 1;
+
+    public static int BARRIER = 3;
     /*
     Zustände der Zellen eines Playfields
      */
@@ -48,7 +50,7 @@ public class Playfield {
             randomY = random.nextInt(field[randomX].length);
         }
         field[randomX][randomY] = FOOD;
-        System.out.println(randomX + " - " + randomY);
+        System.out.println("Apple: " + randomX + " - " + randomY);
     }
 
     public boolean containsApple() {
@@ -65,4 +67,35 @@ public class Playfield {
 
         return r;
     }
+
+    public void drawRandomBarrier(int amount) {
+        for (int i = 0; i < amount; i++) {
+            Random random = new Random();
+            int randomX = random.nextInt(field.length);
+            int randomY = random.nextInt(field[randomX].length);
+            while (field[randomX][randomY] != EMPTY) {
+                random = new Random();
+                randomX = random.nextInt(field.length);
+                randomY = random.nextInt(field[randomX].length);
+            }
+            field[randomX][randomY] = BARRIER;
+            System.out.println("Barrier: " + randomX + " - " + randomY);
+        }
+    }
+
+    public boolean containsBarrier() {
+        boolean r = false;
+
+        for (int j = 0; j < MAX_Y; j++) {
+            for (int i = 0; i < MAX_X; i++) {
+                if (field[j][i] == BARRIER) {
+                    r = true;
+                    break;
+                }
+            }
+        }
+
+        return r;
+    }
+
 }

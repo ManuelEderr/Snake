@@ -8,6 +8,7 @@ public class Snake {
     private static final int MAX_X = 20;
     private static final int MAX_Y = 20;
     ArrayList<Point2D> snake = new ArrayList<>();
+    private Playfield playfield;
 
     public Snake() {
         snake.add(new Point2D(6, 10));
@@ -19,6 +20,8 @@ public class Snake {
         Point2D temp1 = snake.get(0);
         Point2D temp2;
         boolean apple = false;
+        this.playfield = playfield;
+        ;
 
         switch (direction) {
             case 0:
@@ -40,7 +43,7 @@ public class Snake {
         }
 
         if (!isCollision()) {
-            if (playfield.field[(int) snake.get(0).getX()][(int) snake.get(0).getY()] == 1) {
+            if (this.playfield.field[(int) snake.get(0).getX()][(int) snake.get(0).getY()] == 1) {
                 apple = true;
             }
 
@@ -54,15 +57,15 @@ public class Snake {
                 snake.add(temp1);
             }
 
-            playfield.deleteSnake();
+            this.playfield.deleteSnake();
             for (int k = 0; k < snake.size(); k++) {
-                playfield.setSNAKE((int) snake.get(k).getX(), (int) snake.get(k).getY());
+                this.playfield.setSNAKE((int) snake.get(k).getX(), (int) snake.get(k).getY());
             }
         } else {
-            playfield = null;
+            this.playfield = null;
         }
 
-        return playfield;
+        return this.playfield;
     }
 
     public boolean isCollision() {
@@ -82,6 +85,16 @@ public class Snake {
             if (snake.get(0).getX() == snake.get(i).getX() && snake.get(0).getY() == snake.get(i).getY()) {
                 r = true;
                 break;
+            }
+        }
+
+        for (int i = 0; i < playfield.field.length; i++) {
+            for (int j = 0; j < playfield.field.length; j++) {
+                if (playfield.field[i][j] == 3) {
+                    if (snake.get(0).getX() == i && snake.get(0).getY() == j) {
+                        r = true;
+                    }
+                }
             }
         }
 
