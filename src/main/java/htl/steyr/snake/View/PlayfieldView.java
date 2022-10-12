@@ -1,15 +1,10 @@
 package htl.steyr.snake.View;
 
 import htl.steyr.snake.Model.Playfield;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class PlayfieldView {
@@ -44,7 +39,7 @@ public class PlayfieldView {
                         gridPane.add(imageView1, i, j);
                         break;
                     case 2:
-                        imageView2 = new ImageView("img.png");
+                        imageView2 = new ImageView("img1.png");
                         imageView2.setFitHeight(22.8);
                         imageView2.setFitWidth(22.8);
                         gridPane.add(imageView2, i, j);

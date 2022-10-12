@@ -35,7 +35,7 @@ public class SettingsController {
         path = "pictures_music\\legendarymusic.mp3";
         media = new Media(new File(path).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
-        //   mediaPlayer.setAutoPlay(true);
+        //mediaPlayer.setAutoPlay(true);
         startvalue = volumeSlider.getValue();
         System.out.println("start " + startvalue);
         chooseDifficulty.setItems(FXCollections.observableArrayList("slow", "normal", "fast"));

@@ -9,6 +9,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 
 public class PlayfieldController {
 
@@ -21,6 +32,7 @@ public class PlayfieldController {
     public static int EASY = 300000000;
     public static int MEDIUM = 100000000;
     public static int HARD = 0;
+    public Label labelScore;
     int speed;
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
@@ -39,6 +51,8 @@ public class PlayfieldController {
 
 
     public void afterSwitch(Scene scene, String difficulty, String barriers) {
+        labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
+        timeLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
         switch (difficulty) {
             case "slow":
                 this.speed = EASY;
@@ -111,8 +125,27 @@ public class PlayfieldController {
                         }
 
                         snakePlayfield = snake.move(snakePlayfield, direction);
+                        labelScore.setText("Score: " + snake.getCountScore());
 
                         if (snakePlayfield == null) {
+
+                            try {
+                                JSONArray arr = initArray("highscore.json");
+
+                                JSONObject jo = new JSONObject();
+                                jo.put("name", "");
+                                jo.put("score", snake.getCountScore());
+
+                                if (!isInDB(jo, arr)){
+                                    arr.put(jo);
+                                    saveArray(arr, "highscore.json");
+                                }
+
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
                             this.stop();
                             System.out.println("GAME OVER");
                         }
@@ -126,4 +159,61 @@ public class PlayfieldController {
         }.start();
 
     }
+
+
+    /*
+    void jsonFunction() throws IOException {
+        String path = "highscore.json";
+        JSONObject jo = new JSONObject();
+        jo.put("name", "");
+        jo.put("score", snake.getCountScore());
+
+        JSONArray ja = new JSONArray();
+        ja.put(jo);
+
+        System.out.println(ja.toString());
+        //Files.write(path, ja.toString().getBytes(), StandardOpenOption.CREATE);
+
+    }
+
+     */
+
+
+    //https://stackoverflow.com/questions/61524425/how-to-add-new-jsonobjects-to-existing-jsonarray-in-json-file
+    private static JSONArray initArray(String jsonFileName) throws IOException, JSONException {
+        String json = "";
+        File jsonFile = new File(jsonFileName);
+        if (!jsonFile.exists()) {
+            return new JSONArray();
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(jsonFile))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                json += line;
+            }
+        }
+        JSONTokener tokener = new JSONTokener(json);
+        JSONArray readArr = new JSONArray(tokener);
+        System.out.println("Read arr: " + readArr.toString());
+        return readArr;
+    }
+
+    private static boolean isInDB(JSONObject obj, JSONArray arr) throws JSONException {
+        for (int i = 0; i < arr.length(); i++) {
+            JSONObject item = arr.getJSONObject(i);
+            if (obj.toString().equals(item.toString())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static JSONArray saveArray(JSONArray arr, String jsonFileName) throws JSONException, IOException {
+        try (FileWriter Data = new FileWriter(jsonFileName)) {
+            Data.write(arr.toString(4)); // setting spaces for indent
+        }
+        return arr;
+    }
+
 }

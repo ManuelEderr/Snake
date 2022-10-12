@@ -5,6 +5,7 @@ module htl.steyr.snake {
     requires java.logging;
     requires javafx.media;
     requires java.desktop;
+    requires org.json;
 
     opens htl.steyr.snake.Controller to javafx.fxml;
     exports htl.steyr.snake.Controller to javafx.graphics;

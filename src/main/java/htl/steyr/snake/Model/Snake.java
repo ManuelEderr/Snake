@@ -9,6 +9,7 @@ public class Snake {
     private static final int MAX_Y = 20;
     ArrayList<Point2D> snake = new ArrayList<>();
     private Playfield playfield;
+    private int countScore = 0;
 
     public Snake() {
         snake.add(new Point2D(6, 10));
@@ -55,6 +56,7 @@ public class Snake {
 
             if (apple) {
                 snake.add(temp1);
+                countScore++;
             }
 
             this.playfield.deleteSnake();
@@ -99,5 +101,9 @@ public class Snake {
         }
 
         return r;
+    }
+
+    public int getCountScore() {
+        return countScore;
     }
 }
