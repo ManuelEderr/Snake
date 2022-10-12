@@ -21,6 +21,7 @@ public class SettingsController {
 
     public Button playbtn;
     public Slider volumeSlider;
+    public ChoiceBox chooseBarriers;
     private String path;
     private Media media;
     private MediaPlayer mediaPlayer;
@@ -28,6 +29,7 @@ public class SettingsController {
     private double value;
     public ChoiceBox chooseDifficulty;
     public String difficult;
+    public String barriers;
 
     public void initialize() {
         path = "pictures_music\\legendarymusic.mp3";
@@ -37,6 +39,7 @@ public class SettingsController {
         startvalue = volumeSlider.getValue();
         System.out.println("start " +startvalue);
         chooseDifficulty.setItems(FXCollections.observableArrayList("slow","normal","fast"));
+        chooseBarriers.setItems(FXCollections.observableArrayList("0","5","10","20"));
 
     }
 
@@ -50,6 +53,7 @@ public class SettingsController {
             System.out.println("stop");
         }
         Difficulty();
+        SetBarriers();
     }
 
     public void changeScenePlayfield() throws IOException {
@@ -63,7 +67,7 @@ public class SettingsController {
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc = fxmlLoader.getController();
-        pc.afterSwitch(scene, Difficulty());
+        pc.afterSwitch(scene, Difficulty(), SetBarriers());
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
@@ -90,5 +94,10 @@ public class SettingsController {
     public String Difficulty(){
         difficult = (String) chooseDifficulty.getValue();
         return difficult;
+    }
+
+    public String SetBarriers(){
+        barriers = (String) chooseBarriers.getValue();
+        return barriers;
     }
 }

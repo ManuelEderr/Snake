@@ -31,7 +31,7 @@ public class PlayfieldController {
 
     Snake snake = new Snake();
 
-    public void afterSwitch(Scene scene, String difficulty) {
+    public void afterSwitch(Scene scene, String difficulty, String barriers) {
 
         Platform.runLater(() -> {
             scene.setOnKeyPressed(keyEvent -> {
