@@ -13,6 +13,7 @@ import javafx.scene.layout.GridPane;
 
 public class PlayfieldController {
 
+
     public GridPane boardView = new GridPane();
 
     public static int UP = 0;
@@ -30,7 +31,8 @@ public class PlayfieldController {
 
     Snake snake = new Snake();
 
-    public void afterSwitch(Scene scene) {
+    public void afterSwitch(Scene scene, String difficulty) {
+
         Platform.runLater(() -> {
             scene.setOnKeyPressed(keyEvent -> {
                 switch (keyEvent.getCode()) {

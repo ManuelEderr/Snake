@@ -37,22 +37,6 @@ public class SnakeApplication extends Application {
 
     public static void main(String[] args) {
 
-/*
-        ThreadClass1 thread = new ThreadClass1("pictures_music\\legendarymusic.mp3");
-        Thread thread2 = new Thread(thread);
-        thread2.start();
-*/
-      //  File file = new File("pictures_music\\legendarymusic.mp3");
-       // Media media = new Media(file.toURI().toString());
-
-
-        /*
-        String path = "pictures_music\\legendarymusic.mp3";
-        Media media = new Media(new File(path).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setAutoPlay(true);
-*/
-
         launch();
 
     }

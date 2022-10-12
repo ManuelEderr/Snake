@@ -3,7 +3,9 @@ package htl.steyr.snake.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,6 +21,15 @@ public class WelcomeController {
     public void clickhelpbtn(ActionEvent actionEvent) {
 
         // das Spiel und die Steuerung kurz erklären auf Englisch
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Help Dialog ");
+        alert.setHeaderText(null);
+        alert.setContentText("Snake game:\n" +
+                "When the game button is pressed, the game is played with the default settings. When the settings button is pressed, the speed and music volume can be changed.\n" +
+                "The snake moves with the four arrow keys in the respective direction. \n" +
+                "If you drive the snake against the wall or into itself, the game is over.");
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.showAndWait();
     }
 
     public void clicksettingsbtn(ActionEvent actionEvent) throws IOException {
@@ -45,7 +56,7 @@ public class WelcomeController {
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc = fxmlLoader.getController();
-        pc.afterSwitch(scene);
+        pc.afterSwitch(scene, "normal");
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
