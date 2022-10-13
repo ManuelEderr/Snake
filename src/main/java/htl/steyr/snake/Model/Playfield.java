@@ -50,7 +50,6 @@ public class Playfield {
             randomY = random.nextInt(field[randomX].length);
         }
         field[randomX][randomY] = FOOD;
-        System.out.println("Apple: " + randomX + " - " + randomY);
     }
 
     public boolean containsApple() {
@@ -79,7 +78,6 @@ public class Playfield {
                 randomY = random.nextInt(field[randomX].length);
             }
             field[randomX][randomY] = BARRIER;
-            System.out.println("Barrier: " + randomX + " - " + randomY);
         }
     }
 

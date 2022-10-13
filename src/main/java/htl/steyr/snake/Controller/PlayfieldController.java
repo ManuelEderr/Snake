@@ -103,9 +103,7 @@ public class PlayfieldController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                System.out.println(end);
                 if (end) {
-                    System.out.println("Game End");
                     this.stop();
                 }
 
@@ -114,7 +112,6 @@ public class PlayfieldController {
                         lasttick = now;
                     }
 
-                    System.out.println(now);
                     if (now - lasttick > speed) {
                         if (!snakePlayfield.containsApple()) {
                             snakePlayfield.drawRandomApple();

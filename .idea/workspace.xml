@@ -6,18 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Snake">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures_music/WelcomeImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures_music/apple.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Playfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Playfield.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/WelcomeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/WelcomeStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +33,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,18 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/HTL/4AHITN/SEW/JDBC&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Github\Snake\src\main\resources" />
       <recent name="C:\Users\maede\Documents\4ahitn\Snake1\src\main\resources\htl\steyr\snake" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -127,8 +119,8 @@
       <workItem from="1665121718470" duration="649000" />
       <workItem from="1665134675759" duration="643000" />
       <workItem from="1665389936144" duration="1284000" />
-      <workItem from="1665555382425" duration="9225000" />
-      <workItem from="1665589641856" duration="4643000" />
+      <workItem from="1665555382425" duration="11110000" />
+      <workItem from="1665640760639" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -221,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665562516600</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Snake">
+      <created>1665565727394</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665565727394</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +236,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gitignore" />
