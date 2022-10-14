@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Snake">
+    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="meder21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures_music/WelcomeImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures_music/apple.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/apple.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/apple.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Playfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/Playfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/WelcomeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/WelcomeStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/snake/Controller/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Model/Playfield.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/View/PlayfieldView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +122,8 @@
       <workItem from="1665134675759" duration="643000" />
       <workItem from="1665389936144" duration="1284000" />
       <workItem from="1665555382425" duration="11110000" />
-      <workItem from="1665640760639" duration="2072000" />
+      <workItem from="1665640760639" duration="5853000" />
+      <workItem from="1665727131784" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -220,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665565727394</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="meder21">
+      <created>1665643057838</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665643057838</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +253,7 @@
     <MESSAGE value="Update" />
     <MESSAGE value="View" />
     <MESSAGE value="Snake" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snake" />
+    <MESSAGE value="meder21" />
+    <option name="LAST_COMMIT_MESSAGE" value="meder21" />
   </component>
 </project>

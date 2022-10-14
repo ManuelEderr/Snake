@@ -3,8 +3,8 @@ package htl.steyr.snake.Model;
 import java.util.Random;
 
 public class Playfield {
-    public static int MAX_X = 20;
-    public static int MAX_Y = 20;
+    public static int MAX_X = 14;
+    public static int MAX_Y = 14;
 
     public static int EMPTY = 0;
     public static int SNAKE = 2;

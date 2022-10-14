@@ -21,12 +21,17 @@ public class PlayfieldView {
 
     public void drawPlayfield() {
         gridPane.getChildren().clear();
-        gridPane.setStyle("-fx-border-style: solid; -fx-border-color: blue;");
+        gridPane.setStyle("-fx-grid-lines-visible: false;");
 
         for (int i = 0; i < field.field.length; i++) {
             for (int j = 0; j < field.field.length; j++) {
                 Label label = new Label();
-                label.setStyle("-fx-background-color: green; -fx-pref-width: 25.48; -fx-pref-height: 25.48");
+                if ((i + j) % 2 == 0) {
+                    label.setStyle("-fx-background-color: #aad751; -fx-pref-width: 40; -fx-pref-height: 40");
+                } else {
+                    label.setStyle("-fx-background-color: #a2d149; -fx-pref-width: 40; -fx-pref-height: 40");
+                }
+
                 gridPane.add(label, i, j);
 
                 switch (field.field[i][j]) {
@@ -34,14 +39,14 @@ public class PlayfieldView {
                         break;
                     case 1:
                         imageView1 = new ImageView("apple.png");
-                        imageView1.setFitHeight(22.8);
-                        imageView1.setFitWidth(22.8);
+                        imageView1.setFitHeight(40);
+                        imageView1.setFitWidth(40);
                         gridPane.add(imageView1, i, j);
                         break;
                     case 2:
                         imageView2 = new ImageView("img1.png");
-                        imageView2.setFitHeight(22.8);
-                        imageView2.setFitWidth(22.8);
+                        imageView2.setFitHeight(40);
+                        imageView2.setFitWidth(40);
                         gridPane.add(imageView2, i, j);
                         break;
                     case 3:
@@ -54,8 +59,8 @@ public class PlayfieldView {
                             imageView3 = new ImageView("barrier2.png");
                         }
 
-                        imageView3.setFitHeight(22.8);
-                        imageView3.setFitWidth(22.8);
+                        imageView3.setFitHeight(30);
+                        imageView3.setFitWidth(30);
                         gridPane.add(imageView3, i, j);
                         break;
                 }

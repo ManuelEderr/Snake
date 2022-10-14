@@ -42,13 +42,13 @@ public class PlayfieldController {
     private int barrierCount = 0;
     private boolean pause;
     private boolean end;
+    Snake snake = new Snake();
+    private double time = 0.0;
 
     public void initialize() {
+        time = System.currentTimeMillis();
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
-
-    Snake snake = new Snake();
-
 
     public void afterSwitch(Scene scene, String difficulty, String barriers) {
         labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
@@ -100,6 +100,23 @@ public class PlayfieldController {
             });
         });
 
+        /*
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (!end) {
+                    System.out.println(System.currentTimeMillis());
+                    timeLabel.setText("Zeit benötigt: " + ((System.currentTimeMillis() - time) / 1e9) + " sec");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }).start();
+        */
+
         new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -133,7 +150,7 @@ public class PlayfieldController {
                                 jo.put("name", "");
                                 jo.put("score", snake.getCountScore());
 
-                                if (!isInDB(jo, arr)){
+                                if (!isInDB(jo, arr)) {
                                     arr.put(jo);
                                     saveArray(arr, "highscore.json");
                                 }
@@ -156,7 +173,6 @@ public class PlayfieldController {
         }.start();
 
     }
-
 
     /*
     void jsonFunction() throws IOException {

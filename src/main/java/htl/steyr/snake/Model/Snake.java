@@ -5,8 +5,8 @@ import javafx.geometry.Point2D;
 import java.util.ArrayList;
 
 public class Snake {
-    private static final int MAX_X = 20;
-    private static final int MAX_Y = 20;
+    private static final int MAX_X = 14;
+    private static final int MAX_Y = 14;
     ArrayList<Point2D> snake = new ArrayList<>();
     private Playfield playfield;
     private int countScore = 0;
