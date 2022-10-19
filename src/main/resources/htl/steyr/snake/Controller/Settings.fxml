@@ -6,15 +6,20 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.snake.Controller.SettingsController">
+<?import java.net.URL?>
+<AnchorPane id="AnchorPane" fx:id="apane" prefHeight="400.0" prefWidth="600.0" styleClass="anchor"  xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr.snake.Controller.SettingsController">
+   <stylesheets>
+      <URL value="@SettingsStyle.css"/>
+   </stylesheets>
+
    <children>
       <Button fx:id="playbtn" layoutX="267.0" layoutY="329.0" mnemonicParsing="false" onAction="#clickplaybtn" text="Play" />
       <Label layoutX="272.0" layoutY="35.0" text="Settings" />
       <Label layoutX="101.0" layoutY="90.0" text="Difficulty" />
       <Label layoutX="451.0" layoutY="90.0" text="Music" />
-      <ChoiceBox fx:id="chooseDifficulty" layoutX="50.0" layoutY="119.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chooseDifficulty" value="normal" layoutX="50.0" layoutY="119.0" prefWidth="150.0" />
       <Slider fx:id="volumeSlider" layoutX="397.0" layoutY="125.0" onMouseDragged="#MediaControll" />
-      <ChoiceBox fx:id="chooseBarriers" layoutX="50.0" layoutY="228.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chooseBarriers" value="0" layoutX="50.0" layoutY="228.0" prefWidth="150.0" />
       <Label layoutX="111.0" layoutY="200.0" text="Barriers" />
    </children>
 </AnchorPane>

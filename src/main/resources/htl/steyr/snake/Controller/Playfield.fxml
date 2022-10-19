@@ -45,5 +45,4 @@
    <Label id="timeLabel" fx:id="timeLabel" layoutX="15.0" layoutY="15.0" prefHeight="18.0" prefWidth="154.0" stylesheets="@WelcomeStyle.css" text="Time:   00:00" />
    <Label id="scoreLabel" fx:id="labelScore" layoutX="15.0" layoutY="35.0" stylesheets="@WelcomeStyle.css" text="Score: " />
 
-
 </AnchorPane>

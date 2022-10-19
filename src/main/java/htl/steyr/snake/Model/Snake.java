@@ -22,7 +22,6 @@ public class Snake {
         Point2D temp2;
         boolean apple = false;
         this.playfield = playfield;
-        ;
 
         switch (direction) {
             case 0:

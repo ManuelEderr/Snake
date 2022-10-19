@@ -16,8 +16,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * In dieser Klasse wird das Programm gestartet.
+ */
 public class SnakeApplication extends Application {
 
+    /**
+     *  @author nschickm
+     * Als ersters wird die "Splash-view.fxml" ausgerufen
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -33,7 +42,6 @@ public class SnakeApplication extends Application {
 
 
     }
-
 
     public static void main(String[] args) {
 

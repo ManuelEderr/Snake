@@ -5,9 +5,14 @@ import htl.steyr.snake.Model.Snake;
 import htl.steyr.snake.View.PlayfieldView;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,11 +20,11 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.List;
+
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class PlayfieldController {
 
@@ -32,7 +37,10 @@ public class PlayfieldController {
     public static int EASY = 300000000;
     public static int MEDIUM = 100000000;
     public static int HARD = 0;
+    public Button testbtn;
+    @FXML
     public Label labelScore;
+
     int speed;
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
@@ -44,11 +52,15 @@ public class PlayfieldController {
     private boolean end;
     Snake snake = new Snake();
     private double time = 0.0;
+    public Button restartBtn;
+
 
     public void initialize() {
         time = System.currentTimeMillis();
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
+    //  Snake snake = new Snake();
+
 
     public void afterSwitch(Scene scene, String difficulty, String barriers) {
         labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
@@ -143,9 +155,18 @@ public class PlayfieldController {
                                 e.printStackTrace();
                             }
 
+
                             this.stop();
+                            try {
+                                System.out.println("try");
+                                changeScene();
+                            } catch (IOException e) {
+                                System.out.println("error be");
+                                throw new RuntimeException(e);
+                            }
                             System.out.println("GAME OVER");
                         }
+
 
                         pfView.drawPlayfield();
 
@@ -157,22 +178,45 @@ public class PlayfieldController {
 
     }
 
-    /*
-    void jsonFunction() throws IOException {
-        String path = "highscore.json";
-        JSONObject jo = new JSONObject();
-        jo.put("name", "");
-        jo.put("score", snake.getCountScore());
+    /**
+     *  @author nschickm
+     * Sobald die Schlange stirbt ploppt das GameOver Fenster ("GameOVer.fxml") auf.
+     * Auf dieser ein restart-Button abgebildet ist.
+     * @throws IOException
+     */
+    public void changeScene() throws IOException {
 
-        JSONArray ja = new JSONArray();
-        ja.put(jo);
+        Stage stageclose2 = (Stage) labelScore.getScene().getWindow();
+        stageclose2.close();
 
-        System.out.println(ja.toString());
-        //Files.write(path, ja.toString().getBytes(), StandardOpenOption.CREATE);
-
+        Stage stage = new Stage();
+        Parent pane = FXMLLoader.load(Objects.requireNonNull(SettingsController.class.getResource("GameOver.fxml")));
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
     }
 
+
+    /**
+     *  @author nschickm
+     * Wird der restart-Button geklicket, wird das GameOver Fenster ("Game.Over.fxml") und das Spielfeld ("Playfield.fxml")
+     * geschlossen. Zu gleich wird wieder zum Startbildschirm ("Hello-view.fxml") weitergeleitet.
+     * @param mouseEvent
+     * @throws IOException
      */
+    public void restartGame(MouseEvent mouseEvent) throws IOException {
+
+        Stage stageclose = (Stage) restartBtn.getScene().getWindow();
+        stageclose.close();
+
+        Stage stage = new Stage();
+        Parent pane = FXMLLoader.load(Objects.requireNonNull(SettingsController.class.getResource("Hello-view.fxml")));
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
 
 
     //https://stackoverflow.com/questions/61524425/how-to-add-new-jsonobjects-to-existing-jsonarray-in-json-file
