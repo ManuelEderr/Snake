@@ -110,8 +110,8 @@ public class SettingsController {
         value = volumeSlider.getValue();
         valueMediaplayer = mediaPlayer.getVolume();
 
-        if ((value / 100) != valueMediaplayer) {
-            value = value / 100;
+        value = value / 100;
+        if (value != valueMediaplayer) {
             mediaPlayer.setVolume(value);
             mediaPlayer.play();
         }
@@ -119,7 +119,6 @@ public class SettingsController {
 
         if (value == 0.0) {
             mediaPlayer.stop();
-            System.out.println("stop");
         }
         countMedia = 1;
     }

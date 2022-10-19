@@ -1,6 +1,5 @@
 package htl.steyr.snake.Controller;
 
-import htl.steyr.snake.View.PlayfieldView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,11 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 

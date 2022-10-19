@@ -26,7 +26,6 @@ public class WelcomeController {
     public Button helpbtn;
     public Button playbtn;
     public Button settingsbtn;
-
     @FXML
     private AnchorPane apane;
     private AnchorPane AnchorPane;
@@ -105,22 +104,6 @@ public class WelcomeController {
 
         Stage stageclose = (Stage) settingsbtn.getScene().getWindow();
         stageclose.close();
-/*
-        final FXMLLoader fxmlLoader = new FXMLLoader();
-        URL u = SnakeApplication.class.getResource("Settings.fxml");
-
-        assert u != null;
-        Scene scene = new Scene(fxmlLoader.load(u.openStream()));
-        SettingsController sc = fxmlLoader.getController();
-
-        stage.setTitle("Snake");
-        scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-
-        */
  try {
         AnchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Settings.fxml")));
         Stage stage1 = new Stage();

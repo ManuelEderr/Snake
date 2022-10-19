@@ -5,7 +5,6 @@ import htl.steyr.snake.Model.Snake;
 import htl.steyr.snake.View.PlayfieldView;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,17 +17,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.List;
-
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 
