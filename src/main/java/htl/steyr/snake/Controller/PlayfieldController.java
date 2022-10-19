@@ -100,29 +100,12 @@ public class PlayfieldController {
             });
         });
 
-        /*
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!end) {
-                    System.out.println(System.currentTimeMillis());
-                    timeLabel.setText("Zeit benötigt: " + ((System.currentTimeMillis() - time) / 1e9) + " sec");
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-        }).start();
-        */
+
 
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (end) {
-                    this.stop();
-                }
+                timeLabel.setText("Time: " + ((System.currentTimeMillis() - time) / 1000) + " sec");
 
                 if (!pause) {
                     if (lasttick == 0) {
@@ -141,7 +124,7 @@ public class PlayfieldController {
                         snakePlayfield = snake.move(snakePlayfield, direction);
                         labelScore.setText("Score: " + snake.getCountScore());
 
-                        if (snakePlayfield == null) {
+                        if (snakePlayfield == null || end) {
 
                             try {
                                 JSONArray arr = initArray("highscore.json");
