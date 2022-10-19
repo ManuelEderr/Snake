@@ -32,6 +32,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Hier wird das Spiel ausgefuehrt und alle notwendigen
+ * Bedingugen die man waehrend des Spiels benoetigt
+ * werden staendig ueberprueft.
+ */
 public class PlayfieldController {
     public GridPane boardView = new GridPane();
     public static int UP = 0;
@@ -55,11 +60,24 @@ public class PlayfieldController {
     private double time = 0.0;
     public Button restartBtn;
 
+    /**
+     * Die aktuelle Zeit in Millisekunden wird gespeichert und eine
+     * Playfieldview wird erzeugt.
+     */
     public void initialize() {
         time = System.currentTimeMillis();
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
 
+    /**
+     * Die Einstellungen werden in der Methode eingestellt und die
+     * Tasten-Bedingugen festgelegt.
+     * Im AnimationTimer werden Aepfel und Barrieren eingezechnet, die Spielzeit und der Score wird erhoeht.
+     * Außerdem wird ueberprueft ob die Schlange noch lebt.
+     * @param scene
+     * @param difficulty die Geschwindigkeit der Schlange.
+     * @param barriers die Anzahl der Barrieren die auf das Spielfeld platziert werden.
+     */
     public void afterSwitch(Scene scene, String difficulty, String barriers) {
         labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
         timeLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
@@ -180,7 +198,9 @@ public class PlayfieldController {
 
     /**
      *  @author nschickm
-     * Sobald die Schlange stirbt ploppt das GameOver Fenster ("GameOVer.fxml") auf.
+     *
+     * Sobald die Schlange stirbt wird das Spielfeld ("Playfield.fxml") geschlossen
+     * und das GameOver Fenster ("GameOVer.fxml") ploppt auf.
      * Auf dieser ein restart-Button abgebildet ist.
      * @throws IOException
      */
@@ -199,7 +219,7 @@ public class PlayfieldController {
 
     /**
      *  @author nschickm
-     * Wird der restart-Button geklicket, wird das GameOver Fenster ("Game.Over.fxml") und das Spielfeld ("Playfield.fxml")
+     * Wird der restart-Button geklicket wird das Spielfeld ("Playfield.fxml")
      * geschlossen. Zu gleich wird wieder zum Startbildschirm ("Hello-view.fxml") weitergeleitet.
      * @param mouseEvent
      * @throws IOException
@@ -219,6 +239,13 @@ public class PlayfieldController {
     }
 
 
+    /**
+     * Es wird eine neue Json-Datei mit den Namen "highscore.json" erstellt.
+     * @param jsonFileName bestimmt den Namen der Datei
+     * @return
+     * @throws IOException
+     * @throws JSONException
+     */
     //https://stackoverflow.com/questions/61524425/how-to-add-new-jsonobjects-to-existing-jsonarray-in-json-file
     private static JSONArray initArray(String jsonFileName) throws IOException, JSONException {
         String json = "";
@@ -239,6 +266,14 @@ public class PlayfieldController {
         return readArr;
     }
 
+    /**
+     * Ueberprueft, ob die Werte schon in der JSON Datei vorhanden sind.
+     * @param obj Übergibt das Objekt mit den Key und Value.
+     * @param arr Das JSONArray zum hineinschreiben.
+     * @return true -> wenn der Wert schon in der Datei vorhanden ist.
+     *        false -> wenn der Wert nicht in der Datei vorhanden ist.
+     * @throws JSONException
+     */
     private static boolean isInDB(JSONObject obj, JSONArray arr) throws JSONException {
         for (int i = 0; i < arr.length(); i++) {
             JSONObject item = arr.getJSONObject(i);
@@ -249,6 +284,14 @@ public class PlayfieldController {
         return false;
     }
 
+    /**
+     * Schreibt den Wert mittels FileWriter in die JSON Datei.
+     * @param arr Das JSONArray zum hineinschreiben.
+     * @param jsonFileName Der Filename der Daei
+     * @return Das JSONArray das hineingeschrieben wurde wird zurueck gegeben.
+     * @throws JSONException
+     * @throws IOException
+     */
     private static JSONArray saveArray(JSONArray arr, String jsonFileName) throws JSONException, IOException {
         try (FileWriter Data = new FileWriter(jsonFileName)) {
             Data.write(arr.toString(4)); // setting spaces for indent
