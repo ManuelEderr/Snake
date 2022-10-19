@@ -5,6 +5,10 @@ import htl.steyr.snake.Model.Snake;
 import htl.steyr.snake.View.PlayfieldView;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,15 +17,25 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
 import java.io.*;
 import java.text.DecimalFormat;
+
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.Objects;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.*;
 
 /**
  * Hier wird das Spiel ausgefuehrt und alle notwendigen
@@ -38,6 +52,8 @@ public class PlayfieldController {
     public static int MEDIUM = 100000000;
     public static int HARD = 0;
     public Label labelScore;
+    public Label highscoreLabel;
+    public Label scoreLabelEnd;
     int speed;
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
@@ -50,6 +66,9 @@ public class PlayfieldController {
     Snake snake = new Snake();
     private double time = 0.0;
     public Button restartBtn;
+    private int endscore;
+    private String highscoreName;
+    private int highscoreValue;
 
     /**
      * Die aktuelle Zeit in Millisekunden wird gespeichert und eine
@@ -59,19 +78,46 @@ public class PlayfieldController {
         time = System.currentTimeMillis();
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
+    //  Snake snake = new Snake();
 
     /**
      * Die Einstellungen werden in der Methode eingestellt und die
      * Tasten-Bedingugen festgelegt.
      * Im AnimationTimer werden Aepfel und Barrieren eingezechnet, die Spielzeit und der Score wird erhoeht.
      * Außerdem wird ueberprueft ob die Schlange noch lebt.
+     *
      * @param scene
      * @param difficulty die Geschwindigkeit der Schlange.
-     * @param barriers die Anzahl der Barrieren die auf das Spielfeld platziert werden.
+     * @param barriers   die Anzahl der Barrieren die auf das Spielfeld platziert werden.
      */
-    public void afterSwitch(Scene scene, String difficulty, String barriers) {
+
+    public void afterSwitch(Scene scene, String difficulty, String barriers, String name) throws IOException {
+        File file = new File("highscore.json");
+        String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
+        JSONArray jsa = new JSONArray(content);
+        HashMap<String, Integer> highscores = new HashMap();
+
+        for (int i = 0; i < jsa.length(); i++) {
+            highscores.put((String) jsa.getJSONObject(i).get("name"), (Integer) jsa.getJSONObject(i).get("score"));
+        }
+
+
+        Map<String, Integer> hm1 = sortByValue(highscores);
+        int tempcount = 0;
+
+
+        for (Map.Entry<String, Integer> en :
+                hm1.entrySet()) {
+            highscoreName = en.getKey();
+            highscoreValue = en.getValue();
+            highscoreLabel.setText("Highscore: " + en.getKey() + " | " + en.getValue());
+
+        }
+
+
         labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
         timeLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
+        highscoreLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
         switch (difficulty) {
             case "slow":
                 this.speed = EASY;
@@ -120,7 +166,6 @@ public class PlayfieldController {
         });
 
 
-
         new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -148,6 +193,7 @@ public class PlayfieldController {
 
                         snakePlayfield = snake.move(snakePlayfield, direction);
                         labelScore.setText("Score: " + snake.getCountScore());
+                        endscore = snake.getCountScore();
 
                         if (snakePlayfield == null || end) {
 
@@ -155,7 +201,7 @@ public class PlayfieldController {
                                 JSONArray arr = initArray("highscore.json");
 
                                 JSONObject jo = new JSONObject();
-                                jo.put("name", "");
+                                jo.put("name", name);
                                 jo.put("score", snake.getCountScore());
 
                                 if (!isInDB(jo, arr)) {
@@ -171,11 +217,21 @@ public class PlayfieldController {
 
                             this.stop();
                             try {
-                                changeScene();
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("GAME OVER");
+                                alert.setHeaderText("Score: " + snake.getCountScore());
+                                alert.setContentText("Vorheriger Highscore: " + highscoreName + " | " + highscoreValue + "\n" + "");
+
+                                Platform.runLater(alert::showAndWait);
+
+                                    changeScene();
+
                             } catch (IOException e) {
+                                System.out.println("error be");
                                 throw new RuntimeException(e);
                             }
                         }
+
 
                         pfView.drawPlayfield();
 
@@ -185,15 +241,14 @@ public class PlayfieldController {
             }
         }.start();
 
+
     }
 
     /**
-     *  @author nschickm
-     *
-     * Sobald die Schlange stirbt wird das Spielfeld ("Playfield.fxml") geschlossen
-     * und das GameOver Fenster ("GameOVer.fxml") ploppt auf.
-     * Auf dieser ein restart-Button abgebildet ist.
      * @throws IOException
+     * @author nschickm
+     * Sobald die Schlange stirbt ploppt das GameOver Fenster ("GameOVer.fxml") auf.
+     * Auf dieser ein restart-Button abgebildet ist.
      */
     public void changeScene() throws IOException {
 
@@ -209,11 +264,11 @@ public class PlayfieldController {
 
 
     /**
-     *  @author nschickm
-     * Wird der restart-Button geklicket wird das Spielfeld ("Playfield.fxml")
-     * geschlossen. Zu gleich wird wieder zum Startbildschirm ("Hello-view.fxml") weitergeleitet.
      * @param mouseEvent
      * @throws IOException
+     * @author nschickm
+     * Wird der restart-Button geklicket, wird das GameOver Fenster ("Game.Over.fxml") und das Spielfeld ("Playfield.fxml")
+     * geschlossen. Zu gleich wird wieder zum Startbildschirm ("Hello-view.fxml") weitergeleitet.
      */
     public void restartGame(MouseEvent mouseEvent) throws IOException {
 
@@ -288,6 +343,23 @@ public class PlayfieldController {
             Data.write(arr.toString(4)); // setting spaces for indent
         }
         return arr;
+    }
+
+    public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> hm) {
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Integer>> list =
+                new LinkedList<>(hm.entrySet());
+
+        // Sort the list
+        list.sort(Map.Entry.comparingByValue());
+
+
+        // put data from sorted list to hashmap
+        HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
+        for (Map.Entry<String, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
     }
 
 }

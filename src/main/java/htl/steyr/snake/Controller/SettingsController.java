@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -27,6 +28,7 @@ public class SettingsController {
     public Button playbtn;
     public Slider volumeSlider;
     public ChoiceBox chooseBarriers;
+    public TextField nameTextField;
     private String path;
     private Media media;
     private MediaPlayer mediaPlayer;
@@ -83,7 +85,7 @@ public class SettingsController {
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc = fxmlLoader.getController();
-        pc.afterSwitch(scene, Difficulty(), SetBarriers());
+        pc.afterSwitch(scene, Difficulty(), SetBarriers(), nameTextField.getText());
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);

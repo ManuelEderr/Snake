@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -26,6 +27,8 @@ public class WelcomeController {
     public Button helpbtn;
     public Button playbtn;
     public Button settingsbtn;
+    public TextField nameTextField;
+
     @FXML
     private AnchorPane apane;
     private AnchorPane AnchorPane;
@@ -85,7 +88,7 @@ public class WelcomeController {
         assert u != null;
         Scene scene = new Scene(fxmlLoader.load(u.openStream()));
         PlayfieldController pc = fxmlLoader.getController();
-        pc.afterSwitch(scene, "normal","0");
+        pc.afterSwitch(scene, "normal","0", nameTextField.getText());
 
         stage.setTitle("Snake");
         scene.setFill(Color.TRANSPARENT);
