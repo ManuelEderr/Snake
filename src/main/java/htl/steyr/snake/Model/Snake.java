@@ -11,12 +11,24 @@ public class Snake {
     private Playfield playfield;
     private int countScore = 0;
 
+    /**
+     * Die Schlange wird initialisiert mit einer Länge von 3 und Standardwerten
+     */
     public Snake() {
         snake.add(new Point2D(6, 10));
         snake.add(new Point2D(5, 10));
         snake.add(new Point2D(4, 10));
     }
 
+    /**
+     * Die Schlange wird in die mitgegebene Richtung bewegt, falls:
+     * -> ein Apfel getroffen wird wird die Schlange verlängert
+     * -> ein Hindernis oder der Spielfeldrand getroffen wird null zurückgegeben
+     *
+     * @param playfield
+     * @param direction
+     * @return null->Game Over, sonst new Playfield()
+     */
     public Playfield move(Playfield playfield, int direction) {
         Point2D temp1 = snake.get(0);
         Point2D temp2;
@@ -69,6 +81,11 @@ public class Snake {
         return this.playfield;
     }
 
+    /**
+     * Überprüft ob der Kopf der Schlange ein Hindernis, den Rand, oder nichts von beiden trifft.
+     *
+     * @return true falls ein Hindernis oder der Rand getroffen wird
+     */
     public boolean isCollision() {
         boolean r = false;
 
@@ -102,6 +119,9 @@ public class Snake {
         return r;
     }
 
+    /**
+     * @return returns score
+     */
     public int getCountScore() {
         return countScore;
     }

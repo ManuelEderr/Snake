@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="meder21">
+    <list default="true" id="54da48e5-e65f-4b5c-8f17-35d41ce2d5e7" name="Changes" comment="Timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures_music/legendarymusic.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/pictures_music/legendarymusic.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/PlayfieldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Playfield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/Model/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/snake/View/PlayfieldView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/PlayfieldController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/htl/steyr/snake/Controller/SettingsController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +123,7 @@
       <workItem from="1665727131784" duration="125000" />
       <workItem from="1665743712257" duration="906000" />
       <workItem from="1666073042927" duration="10000" />
-      <workItem from="1666159396011" duration="1161000" />
+      <workItem from="1666159396011" duration="5217000" />
     </task>
     <task id="LOCAL-00001" summary="Gitignore">
       <created>1663741814717</created>
@@ -231,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665727246312</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Timer">
+      <created>1666160785207</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1666160785207</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +268,7 @@
     <MESSAGE value="View" />
     <MESSAGE value="Snake" />
     <MESSAGE value="meder21" />
-    <option name="LAST_COMMIT_MESSAGE" value="meder21" />
+    <MESSAGE value="Timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer" />
   </component>
 </project>

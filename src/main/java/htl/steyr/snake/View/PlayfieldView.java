@@ -14,11 +14,23 @@ public class PlayfieldView {
     Playfield field;
     GridPane gridPane;
 
+    /**
+     * @param field Playfield, in welchem SNAKE(2), FOOD(1), BARRIER(3) und EMPTY(0) gespeichert werden
+     * @param gridPane GridPane, in welchem das Playfield gezeichnet wird
+     */
     public PlayfieldView(Playfield field, GridPane gridPane) {
         this.field = field;
         this.gridPane = gridPane;
     }
 
+    /**
+     * Zeichnet das Playfield:
+     *  case:
+     *      -1 Apfel
+     *      -2 Schlange
+     *      -3 Hindernis
+     * Das Playfield wird kariert, mit den Farben #aad751 und #a2d149 eingefärbt.
+     */
     public void drawPlayfield() {
         gridPane.getChildren().clear();
         gridPane.setStyle("-fx-grid-lines-visible: false;");
@@ -35,8 +47,6 @@ public class PlayfieldView {
                 gridPane.add(label, i, j);
 
                 switch (field.field[i][j]) {
-                    case 0:
-                        break;
                     case 1:
                         imageView1 = new ImageView("apple.png");
                         imageView1.setFitHeight(40);

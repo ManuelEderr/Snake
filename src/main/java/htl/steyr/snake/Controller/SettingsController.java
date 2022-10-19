@@ -104,17 +104,13 @@ public class SettingsController {
     public void MediaControll() {
         if (countMedia == 0) {
             path = "pictures_music\\legendarymusic.mp3";
-            //path = "pictures_music\\bollboll.mp3";
             media = new Media(new File(path).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
         }
         value = volumeSlider.getValue();
-        System.out.println("value " + (value / 100));
         valueMediaplayer = mediaPlayer.getVolume();
-        System.out.println("valueMediaPlayer " + valueMediaplayer);
 
         if ((value / 100) != valueMediaplayer) {
-            //  volumeSlider.setValue(value);
             value = value / 100;
             mediaPlayer.setVolume(value);
             mediaPlayer.play();

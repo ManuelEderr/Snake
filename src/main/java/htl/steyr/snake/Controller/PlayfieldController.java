@@ -20,6 +20,12 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.List;
 
 import javafx.stage.Stage;
 
@@ -27,8 +33,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PlayfieldController {
-
-
     public GridPane boardView = new GridPane();
     public static int UP = 0;
     public static int DOWN = 1;
@@ -37,10 +41,7 @@ public class PlayfieldController {
     public static int EASY = 300000000;
     public static int MEDIUM = 100000000;
     public static int HARD = 0;
-    public Button testbtn;
-    @FXML
     public Label labelScore;
-
     int speed;
     public Label timeLabel;
     Playfield snakePlayfield = new Playfield();
@@ -54,13 +55,10 @@ public class PlayfieldController {
     private double time = 0.0;
     public Button restartBtn;
 
-
     public void initialize() {
         time = System.currentTimeMillis();
         pfView = new PlayfieldView(snakePlayfield, boardView);
     }
-    //  Snake snake = new Snake();
-
 
     public void afterSwitch(Scene scene, String difficulty, String barriers) {
         labelScore.setStyle("-fx-font-size: 20px; -fx-font-family: 'Agency FB'");
@@ -117,7 +115,13 @@ public class PlayfieldController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                timeLabel.setText("Time: " + ((System.currentTimeMillis() - time) / 1000) + " sec");
+                DecimalFormat df = new DecimalFormat("00");
+
+                int minutes = (int) (((System.currentTimeMillis() - time) / (1000 * 60)) % 60);
+                int seconds = (int) ((System.currentTimeMillis() - time) / 1000) % 60;
+                int millis = (int) ((System.currentTimeMillis() - time) % 100);
+
+                timeLabel.setText("Time: " + df.format(minutes) + ":" + df.format(seconds) + ":" + df.format(millis));
 
                 if (!pause) {
                     if (lasttick == 0) {
@@ -158,15 +162,11 @@ public class PlayfieldController {
 
                             this.stop();
                             try {
-                                System.out.println("try");
                                 changeScene();
                             } catch (IOException e) {
-                                System.out.println("error be");
                                 throw new RuntimeException(e);
                             }
-                            System.out.println("GAME OVER");
                         }
-
 
                         pfView.drawPlayfield();
 
