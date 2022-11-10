@@ -3,6 +3,7 @@
 ![Snake Game](https://miro.medium.com/max/1400/1*PDQznFmgLBjBRWgtFEP98A.jpeg)
 
 ## Teammitglieder
+
 | Rolle          | Name            | Git-Account                       | E-Mail                          |
 |----------------|-----------------|-----------------------------------|---------------------------------|
 | Projektleitung | Rohrweck Monika | https://github.com/mrohrweck | mrohrweck@htl-steyr.ac.at |
