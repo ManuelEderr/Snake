@@ -7,7 +7,7 @@ Trello: https://trello.com/b/OW4H4EGe/schickmaireckereder
 
 
 {% for element in site.data.database %}
-- {{element.firstname}} {{element.lastname}}, {{element.class}}
+- {{element.firstname}}, {{element.lastname}}, {{element.class}}
 {% endfor %}
 
 ![Snake Game](https://miro.medium.com/max/1400/1*PDQznFmgLBjBRWgtFEP98A.jpeg)
