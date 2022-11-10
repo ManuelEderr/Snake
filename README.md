@@ -18,7 +18,7 @@ Vorgaben: https://www.htl-steyr.ac.at/intern/wiki/doku.php?id=el-it:itp2:umsetzu
 
 ## Zufällige Liste
 {% for element in site.data.database %}
-- {{element.firstname}} {{element.lastname}}, {{element.class}}
+- {{element.firstname}} 
 {% endfor %}
 
 
