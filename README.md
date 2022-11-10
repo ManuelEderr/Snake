@@ -6,6 +6,6 @@ Team: Ecker, Eder, Schickmair
 Trello: https://trello.com/b/OW4H4EGe/schickmaireckereder
 
 
-{% for element in site.database %}
+{% for element in site.data.database %}
 - {{element.firstname}} {{element.lastname}}, {{element.class}}
 {% endfor %}
