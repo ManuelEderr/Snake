@@ -7,5 +7,5 @@ Trello: https://trello.com/b/OW4H4EGe/schickmaireckereder
 
 
 {% for element in site.database %}
-- {{element.firstname}} {{element.lastname}} {{element.class}}
+- {{element.firstname}} {{element.lastname}}, {{element.class}}
 {% endfor %}
