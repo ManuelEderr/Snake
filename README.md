@@ -11,7 +11,7 @@
 | Entwickler     | Ecker David     | https://github.com/decker213      | decker@htl-steyr.ac.at          |
 | Entwickler     | Schickmair Nico     | https://github.com/nschickm      | nschickm@htl-steyr.ac.at          |
 
-##How to play
+## How to play
 
 When the game button is pressed, the game is played with the default settings. When the settings button is pressed, the speed, music volume and the number of barriers can be changed. The snake moves with W-A-S-D keys in the respective direction. If you drive the snake against the wall or into itself, the game is over.
 
